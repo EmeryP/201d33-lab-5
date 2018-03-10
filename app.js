@@ -134,11 +134,19 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function multiplyArray(testArray) { //eslint-disable-line
 
+  var runProduct = 1; //create placeholder variable because multiply func requires 2 arguements
 
-  // return[runProduct, runProductString];
+  for (let i = 0; i < testArray.length; i++) { //iterate through array one element at a time, start at element 0, continue through array length 
+    runProduct = multiply(testArray[i], runProduct)[0]; //update runProduct, multiply by test array element & runProduct, return value at position 0
+    console.log(runProduct);
+  }
+  var runProductString = 'The numbers ' + testArray[0] + ',' + testArray[1] + ',' + testArray[2] + ' have a product of ' + runProduct + '.'; //concatenate string of array elements and text 
+  console.log(runProductString);
+
+  return[runProduct, runProductString]; //return 2 variables 
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
