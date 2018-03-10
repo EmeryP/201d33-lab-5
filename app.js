@@ -58,11 +58,29 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
+//sum of 3 arguements 
+  var sumAB = sum(a, b)[0]; //pass a, b into sum func above, access only position 0 of the array, store in var AB.
+  var sumABC = sum(sumAB, c)[0]; //pass AB, c into sum func above, access only position 0 of array, store in var AB. 
+  console.log(sumABC);
+  var multiplyAB = multiply(a, b)[0]; // pass a, b into multiply func above, access value at position 0, store in varAB
+  var multiplyABC = multiply(multiplyAB, c)[0]; //pass AB, c into multiply func above, access value at position 0, store in var ABC
+  console.log(multiplyABC);
 
+  //concatenated strings
+  var thirdString = a + ' and ' + b + ' and ' + c + ' sum to ' + sumABC + '.'; //concatenate sum strings
+  console.log(thirdString);
+  var fourthString = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + multiplyABC + '.'; //concatenate multiplication strings
+  console.log(fourthString);
+
+  return[sumABC, multiplyABC, thirdString, fourthString];
+
+//return array, first element, sum of a, b, c
+//retun array, second element, product of a, b, c
+//return array, 3rd & 4th element, string of
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
