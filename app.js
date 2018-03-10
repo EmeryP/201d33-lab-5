@@ -95,15 +95,29 @@ IMPORTANT DETAIL: You may not use the arithmetic operator + in this function. To
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumArray() function and see if the test passes.*/
 
 // Write your code here
-var testArray = [2, 3, 4]; //eslint-disable-line
+var testArray = [2, 3, 4]; //eslint-disable-line, create array
 
-function sumArray(testArray) { //eslint-disable-line
+function sumArray(testArray) { //eslint-disable-line, create func named sumArray, pass testArray into it
+//extract elements from testArray
+  var runSum = 0; //setting running sum to 0, creating placeholder var so math func can be used
 
+  for (var i = 0; i < testArray.length; i++) { //using for loop to iterate through array, start at pos 0, iterate at pace of plus 1 each time through and continue through the entire length of the array
+
+    runSum = sum(testArray[i], runSum)[0]; //updates runSum to equal first value in array(2) + 0, loop will continue until end of array, this line creates a loop that continues on forever because runSum will always be the updated value of the sum of the prior two numbers.
+    console.log(runSum);
+  }
+
+  //concatenate string
+  var stringArray = testArray[0] + ',' + testArray[1] + ',' + testArray[2] + ' was passed in as an array of numbers, and ' + runSum + ' is their sum.';
+  console.log(stringArray);
+
+  //add values of test array
+  return[runSum, stringArray];
 }
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -120,6 +134,8 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function multiplyArray(testArray) { //eslint-disable-line
 
+
+  // return[runProduct, runProductString];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
